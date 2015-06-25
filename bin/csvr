@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'csvr'
+CSVR::CLI.start

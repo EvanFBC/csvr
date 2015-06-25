@@ -30,23 +30,23 @@ module CSVR
 
 			File.open(file) do |fi|
 
-				#TODO: Skip the first line. The code below creates an EOF Error
-
-				# lines = fi.each_line
-				# lines.next
+				#Skip the first line
+				lines = fi.each_line
+				lines.next
 
 				values = []
 				counter = 0
 
-				maximum(file).times do 
+				lines.each do |line|
 
 					counter += 1
 					puts "Parsing #{counter}"
 
-					row = CSV.parse_line(fi.readline)
+					row = CSV.parse_line(line)
 
 					hash = {}
 
+					#Remove ' punctation - this causes problems with the "INSERT INTO lines"
 					index.each do |k, v| 
 						row[k].gsub!(/[']/, '') if row[k].respond_to? :gsub
 						hash[v] = row[k]

@@ -42,3 +42,5 @@ module CSVR
 	end
 end
 
+csvr = CSVR.open('stops.csv')
+csvr.create('new', 'table1')

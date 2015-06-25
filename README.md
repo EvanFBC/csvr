@@ -28,7 +28,7 @@ require 'csvr'
 
 csvr = CSVR.open('path/to/file.csv')
 
-(optional) csvr.headers = ['array','of','custom', 'headers]
+(optional) csvr.headers = ['array','of', 'headers]
 (optional) csvr.filters = ['array', 'of' 'strings' 'to' 'parse']
 
 csvr.create('db_name', 'table_name')

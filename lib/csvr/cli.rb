@@ -8,6 +8,7 @@ module CSVR
 		def api 
 
 			outputs = []
+			outputs << "\t require 'csvr' "
  			outputs << "\tcsvr = CSVR.open('path/to/file')"
  			outputs << "\t(optional) csvr.headers = ['array','of','custom', 'headers]"
 			outputs << "\t(optional) csvr.rows = ['array', 'of' 'strings' 'to' 'parse']"

@@ -4,7 +4,7 @@
 
 ###Open, Parse, and Create
 
-Open and parse every line in CSV to the SQLite DB and Table you pick:
+Open and parse every line in CSV, then insert these lines into a SQLite DB
 
 ```
 require 'csvr'
@@ -19,7 +19,7 @@ csvr.create('db_name', 'table_name')
 
 CSVR.headers will skip over any column not specified 
 
-CSVR.filters will skip over any row that does not match one of the row values specified 
+CSVR.filters will skip over any row that does not match a value specified 
 
 *Note: Headers and rows must be specified before CSVR.create is called*
 

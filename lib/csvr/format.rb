@@ -3,6 +3,9 @@ module Format
 
 	module_function
 
+	#TODO: Interpret data types from the second line of a csv file 
+	#TODO: Headers should reflect the data types of their rows
+
 	def headers(headers)
 		headers = headers.map { |h| "#{h} TEXT"}
 		return headers.join(",")

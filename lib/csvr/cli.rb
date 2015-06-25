@@ -6,10 +6,15 @@ module CSVR
 
 		desc "api", "details use of CSVR"
 		def api 
- 			puts "csvr = CSVR.open('path/to/file')"
-			puts "csvr.create('db_name', 'table_name')"
-			puts "(optional) csvr.headers = ['array','of','custom', 'headers]"
-			puts "(optional) csvr.rows = ['array', 'of' 'strings' 'to' 'parse']"
+
+			outputs = []
+ 			outputs << "\tcsvr = CSVR.open('path/to/file')"
+ 			outputs << "\t(optional) csvr.headers = ['array','of','custom', 'headers]"
+			outputs << "\t(optional) csvr.rows = ['array', 'of' 'strings' 'to' 'parse']"
+			outputs << "\tcsvr.create('db_name', 'table_name')"
+
+			outputs.each { |x| puts x }
+
 		end
 	end
 

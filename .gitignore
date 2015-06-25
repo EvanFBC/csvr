@@ -1,0 +1,10 @@
+# Generated Gem Files
+*.gem
+bin/
+
+# Personal Data Files
+stops.csv
+*.db
+
+# OS Junk
+.DS_Store

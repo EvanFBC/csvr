@@ -71,9 +71,5 @@ module CSVR
 
 			return nil
 		end
-
-		def maximum(file)
-			return %x{wc -l < "#{file}"}.to_i
-		end
 	end
 end

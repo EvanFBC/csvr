@@ -7,8 +7,9 @@ module Format
 	#TODO: Headers should reflect the data types of their rows
 
 	def headers(headers)
-		headers = headers.map { |h| "#{h} TEXT"}
-		return headers.join(",")
+		
+		headers = headers.map { |h| "#{h} TEXT" }.join(",")
+		return headers
 	end
 
 	def row(row)

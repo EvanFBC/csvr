@@ -1,0 +1,7 @@
+*.gem
+bin/
+
+.DS_Store
+
+stops.csv
+*.db

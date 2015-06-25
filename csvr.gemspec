@@ -1,5 +1,4 @@
 
-
 Gem::Specification.new do |gem|
 	gem.name = 'csvr'
 	gem.version = '0.4.0'

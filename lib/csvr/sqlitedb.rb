@@ -13,6 +13,8 @@ class Database
 
 	def create
 
+		puts "Inserting rows..."
+
 		db = SQLite3::Database.open("#{@db}.db")
 		db.execute "CREATE TABLE IF NOT EXISTS #{@table}(#{@headers})"
 		@rows.each { |row| db.execute "INSERT INTO #{@table} #{row}" }

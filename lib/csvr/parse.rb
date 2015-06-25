@@ -30,12 +30,18 @@ module CSVR
 
 			File.open(file) do |fi|
 
-				lines = fi.each_line
-				lines.next
+				#TODO: Skip the first line. The code below creates an EOF Error
+
+				# lines = fi.each_line
+				# lines.next
 
 				values = []
+				counter = 0
 
 				maximum(file).times do 
+
+					counter += 1
+					puts "Parsing #{counter}"
 
 					row = CSV.parse_line(fi.readline)
 

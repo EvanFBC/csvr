@@ -42,10 +42,3 @@ module CSVR
 	end
 end
 
-
-# csvr = CSVR.open('test.csv')
-# csvr.headers = ['header2', 'header4']
-# csvr.filters = ['row1']
-# csvr.create('new', 'table1')
-
-

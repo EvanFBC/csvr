@@ -14,9 +14,11 @@ csvr.create('db_name', 'table_name')
 
 ####Optional Parsing
 
-CSVR.headers will skip over any column not specified
-CSVR.rows will skip over any row that does not match one of the row values specified
-Note: Headers and rows must be specified before CSVR.create
+CSVR.headers will skip over any column not specified 
+
+CSVR.rows will skip over any row that does not match one of the row values specified 
+
+*Note: Headers and rows must be specified before CSVR.create*
 
 ```
 csvr = CSVR.open('path/to/file.csv')

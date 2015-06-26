@@ -42,7 +42,7 @@ module CSVR
 					counter += 1
 					puts "Parsing #{counter}"
 
-					row = CSV.parse_line(line)
+					row = CSV.parse_line(line, :converters => :all)
 
 					hash = {}
 
@@ -70,6 +70,20 @@ module CSVR
 			end
 
 			return nil
+		end
+
+		def type(headers, row)
+
+			types = []
+			headers.each do |header|
+				hash = {} 	
+				row.each do |k, v|
+					hash[k] = v.class if header.include?(k)
+					types << hash
+				end
+			end
+			puts types.uniq
+			return types.uniq
 		end
 	end
 end

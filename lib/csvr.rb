@@ -26,6 +26,7 @@ module CSVR
 		def parse
 			@headers ||= CSVR::Parse.headers(@file)
 			@rows = CSVR::Parse.rows(@file, @headers, @filters)
+			@types = CSVR::Parse.type(@headers, @rows[2])
 		end
 
 		def format
@@ -42,5 +43,5 @@ module CSVR
 	end
 end
 
-csvr = CSVR.open('stops.csv')
-csvr.create('new', 'table1')
+csvr = CSVR.open('test.csv')
+csvr.create('test', 'table1')

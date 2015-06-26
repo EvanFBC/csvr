@@ -12,6 +12,12 @@ module Format
 		return headers
 	end
 
+	def type(types)
+
+		#Convert Fixnum to Int, etc
+
+	end
+
 	def row(row)
 
 		if row.is_a? Hash

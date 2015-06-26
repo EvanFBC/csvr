@@ -3,6 +3,8 @@ require_relative 'csvr/format'
 require_relative 'csvr/sqlitedb'
 require_relative 'csvr/cli'
 
+#TODO: COMMAND LINE OPTIONS?
+
 module CSVR
 
 	module_function
@@ -26,7 +28,7 @@ module CSVR
 		def parse
 			@headers ||= CSVR::Parse.headers(@file)
 			@rows = CSVR::Parse.rows(@file, @headers, @filters)
-			@types = CSVR::Parse.type(@headers, @rows[2])
+			@types = CSVR::Parse.type(@headers, @rows[1])
 		end
 
 		def format

@@ -11,10 +11,10 @@ module CSVR
 		return App.new(file)
 	end
 
-	class App 
+	class App
 
 		include CSVR::Parse
-		include Format 
+		include Format
 
 		attr_reader :file, :rows
 		attr_accessor :headers, :filters
@@ -42,6 +42,3 @@ module CSVR
 		end
 	end
 end
-
-csvr = CSVR.open('test.csv')
-csvr.create('test', 'table1')

@@ -3,11 +3,11 @@ module Format
 
 	module_function
 
-	#TODO: Interpret data types from the second line of a csv file 
+	#TODO: Interpret data types from the second line of a csv file
 	#TODO: Headers should reflect the data types of their rows
 
 	def headers(headers)
-		
+
 		headers = headers.map { |h| "#{h} TEXT" }.join(",")
 		return headers
 	end
@@ -15,6 +15,7 @@ module Format
 	def type(types)
 
 		#Convert Fixnum to Int, etc
+		
 
 	end
 

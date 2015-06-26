@@ -1,15 +1,15 @@
 require 'csv'
 
-module CSVR 
+module CSVR
 
-	module Parse 
+	module Parse
 
 		module_function
 
 		def headers(file)
 
-			File.open(file) do |fi| 
-				1.times do 
+			File.open(file) do |fi|
+				1.times do
 					return CSV.parse_line(fi.readline)
 				end
 			end
@@ -47,7 +47,7 @@ module CSVR
 					hash = {}
 
 					#Remove ' punctation - this causes problems with the "INSERT INTO lines"
-					index.each do |k, v| 
+					index.each do |k, v|
 						row[k].gsub!(/[']/, '') if row[k].respond_to? :gsub
 						hash[v] = row[k]
 					end
@@ -76,13 +76,12 @@ module CSVR
 
 			types = []
 			headers.each do |header|
-				hash = {} 	
+				hash = {}
 				row.each do |k, v|
 					hash[k] = v.class if header.include?(k)
 					types << hash
 				end
 			end
-			puts types.uniq
 			return types.uniq
 		end
 	end

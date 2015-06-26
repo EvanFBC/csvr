@@ -11,4 +11,8 @@ Gem::Specification.new do |gem|
 	gem.executables << 'csvr'
 	gem.homepage = 'https://github.com/sm1th-/csvr.git'
 	gem.license = 'MIT'
+
+	gem.add_runtime_dependency "sqlite3"
+	gem.add_runtime_dependency "thor"
+	gem.add_development_dependency "minitest"
 end

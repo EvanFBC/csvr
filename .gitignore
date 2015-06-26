@@ -1,7 +1,5 @@
 *.gem
-bin/
-
 .DS_Store
 
-stops.csv
+*.csv
 *.db

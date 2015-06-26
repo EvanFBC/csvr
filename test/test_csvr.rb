@@ -5,7 +5,6 @@ require 'csvr/format'
 describe "CSVR", "Testing proper argument types for parsing" do
 
   before do
-    puts "Testing"
     @csvr = CSVR.open('test.csv')
     @csvr.parse
   end
@@ -39,4 +38,26 @@ describe "CSVR", "Testing proper argument types for parsing" do
     @csvr.create("testerdb", "table1")
     File.exist?("testerdb.db").must_equal true
   end
+end
+
+describe "CSVR", "Filtering behaviour" do
+
+  before do
+    @csvr = CSVR.open('test.csv')
+  end
+
+  after do
+    File.delete('testerdb.db') if File.exist?('testerdb.db')
+  end
+
+  it "should filter rows" do
+    @csvr.filters = ['row3-4']
+    @csvr.create("testerdb", "table1")
+  end
+
+  it "should parse out columns" do
+    @csvr.headers = ['header1', 'header3']
+    @csvr.create("testerdb", "table1")
+  end
+  
 end

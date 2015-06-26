@@ -28,7 +28,7 @@ module CSVR
 		def parse
 			@headers ||= CSVR::Parse.headers(@file)
 			@rows = CSVR::Parse.rows(@file, @headers, @filters)
-			@types = CSVR::Parse.type(@headers, @rows[1])
+			@types = CSVR::Parse.type(@headers, @rows.sample)
 		end
 
 		def format

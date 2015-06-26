@@ -10,6 +10,10 @@ describe "CSVR", "Testing proper argument types for parsing" do
     @csvr.parse
   end
 
+  after do
+    File.delete('testerdb.db') if File.exist?('testerdb.db')
+  end
+
   it "should contain a headers variable that is an array" do
     @csvr.headers.class.must_equal Array
   end
@@ -19,12 +23,20 @@ describe "CSVR", "Testing proper argument types for parsing" do
     @csvr.rows.each { |x| x.class.must_equal Hash }
   end
 
+  it "should contain a types variable that is a hash" do
+    @csvr.types.class.must_equal Hash
+  end
+
   it "should format headers into a string" do
-    Format.headers(@csvr.headers).class.must_equal String
+     Format.headers(@csvr.headers, @csvr.types).class.must_equal String
   end
 
   it "should format each row into a string" do
     Format.row(@csvr.rows[2]).class.must_equal String
   end
 
+  it "should insert correct data types into db" do
+    @csvr.create("testerdb", "table1")
+    File.exist?("testerdb.db").must_equal true
+  end
 end

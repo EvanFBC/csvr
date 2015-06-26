@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |gem|
 	gem.name = 'csvr'
-	gem.version = '0.6.7'
+	gem.version = '0.6.8'
 	gem.date = '2015-06-24'
 	gem.summary = 'Parsing CSV files to SQLite'
 	gem.description = 'Parses CSV files to a custom SQLite Database, with custom headers and filtering'
@@ -12,4 +12,3 @@ Gem::Specification.new do |gem|
 	gem.homepage = 'https://github.com/sm1th-/csvr.git'
 	gem.license = 'MIT'
 end
-	

@@ -6,17 +6,16 @@ module Format
 	#TODO: Interpret data types from the second line of a csv file
 	#TODO: Headers should reflect the data types of their rows
 
-	def headers(headers)
+	def headers(headers, types)
 
-		headers = headers.map { |h| "#{h} TEXT" }.join(",")
+		headers = headers.map { |h| "#{h} #{type(h, types)}" }.join(",")
 		return headers
 	end
 
-	def type(types)
-
-		#Convert Fixnum to Int, etc
-		
-
+	def type(header, types)
+		return "TEXT" unless types[header] == Fixnum || Float
+		return "INTEGER" unless types[header] == Float
+		return "REAL"
 	end
 
 	def row(row)

@@ -82,7 +82,8 @@ module CSVR
 					types << hash
 				end
 			end
-			return types.uniq
+			#Remove duplicates and merge array of hashes into single hash
+			return types.uniq.inject(:merge)
 		end
 	end
 end

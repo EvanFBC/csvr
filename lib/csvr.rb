@@ -16,7 +16,7 @@ module CSVR
 		include CSVR::Parse
 		include Format
 
-		attr_reader :file, :rows
+		attr_reader :file, :rows, :types
 		attr_accessor :headers, :filters
 
 		def initialize(file)
@@ -30,7 +30,7 @@ module CSVR
 		end
 
 		def format
-			@headers = Format.headers(@headers)
+			@headers = Format.headers(@headers, @types)
 			@rows = @rows.map{ |row| Format.row(row) }
 		end
 
